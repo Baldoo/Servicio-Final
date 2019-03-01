@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondos">
+
+
+    <TextView
+        android:id="@+id/intro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:gravity="center_horizontal"
+        android:text="Introducción"
+        android:clickable="true"
+        android:textColor="@color/negro"
+        android:textSize="28sp"
+        android:focusable="true" />
+
+    <TextView
+        android:id="@+id/docu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:gravity="center_horizontal"
+        android:text="Documentos"
+        android:textColor="@color/negro"
+        android:textSize="28sp"
+        android:clickable="true"
+        android:layout_below="@id/intro"
+        android:focusable="true"/>
+
+    <TextView
+        android:id="@+id/proce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/docu"
+        android:text="Procedimientos"
+        android:textColor="@color/negro"
+        android:textSize="28sp"
+        android:clickable="true"
+        android:focusable="true"/>
+
+        <TextView
+        android:id="@+id/contacto_ser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/proce"
+        android:layout_marginTop="60dp"
+        android:gravity="center_horizontal"
+        android:text="Contacto"
+        android:textColor="@color/negro"
+        android:textSize="28sp"
+        android:clickable="true"
+        android:focusable="true"/>
+
+</RelativeLayout>

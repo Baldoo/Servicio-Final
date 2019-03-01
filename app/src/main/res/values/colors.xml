@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="Blanco">#FFFFFF</color>
+    <color name="verde">#86B188</color>
+    <color name="verde_fuerte">#3C993E</color>
+    <color name="dark_blue">#0575E6</color>
+    <color name="negro">#050505</color>
+    <color name="azul1">#91E4DD</color>
+    <color name="azul2">#54DAD1</color>
+    <color name="azul3">#14BEB3</color>
+    <color name="azul4">#16AD98</color>
+    <color name="morado">#B2A2D3</color>
+    <color name="morado_fuerte">#8D6DD8</color>
+    <color name="transparente">#68EBEBEB</color>
+
+    <color name="black_overlay">#66000000</color>
+</resources>

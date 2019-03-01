@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/fondocc">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="155dp"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="Logo de CIIE"
+        android:src="@drawable/ciie_logo"/>
+
+
+    <Chronometer
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tiempo"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:padding="30dp"
+        android:id="@+id/cuerpo1">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="2dp"
+                android:id="@+id/boton_mision"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Misión"
+                    android:textSize="25sp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_gravity="center"/>
+            </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/boton_vision"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Visión"
+                android:textColor="@color/colorAccent"
+                android:textSize="25sp" />
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:padding="30dp"
+        android:id="@+id/cuerpo2">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="2dp"
+                android:id="@+id/boton_valores">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Valores"
+                    android:textColor="@color/azul4"
+                    android:textSize="25sp" />
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="2dp"
+                android:id="@+id/boton_objetivo"
+                android:layout_alignParentRight="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Objetivo"
+                    android:textColor="@color/azul4"
+                    android:textSize="25sp"
+                    android:layout_gravity="center"/>
+            </android.support.v7.widget.CardView>
+    </RelativeLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="300dp"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="8dp"
+        android:id="@+id/carta_switcher"
+        app:cardBackgroundColor="@color/transparente">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/t"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:text="Servicios que ofrecemos"/>
+
+        <TextSwitcher
+            android:id="@+id/servicios_Tswitcher"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_below="@+id/t"
+            android:inAnimation="@android:anim/slide_in_left"
+            android:outAnimation="@android:anim/slide_out_right"
+            android:clickable="true">
+            </TextSwitcher>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:padding="25dp"
+        android:layout_marginTop="410dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_person_black_24dp"
+            android:id="@+id/contacto"
+            android:layout_marginLeft="23dp"
+            android:layout_marginStart="23dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contacto"
+            android:id="@+id/texto_contacto"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:textSize="20sp"
+            android:layout_alignLeft="@+id/contacto"
+            android:layout_marginTop="85dp"/>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/face_logo"
+            android:id="@+id/logo_face"
+            android:clickable="true"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Síguenos en:"
+            android:textSize="20sp"
+            android:layout_alignTop="@+id/texto_contacto"
+            android:layout_marginLeft="180dp"
+            android:layout_marginStart="180dp" />
+
+    </RelativeLayout>
+
+</FrameLayout>

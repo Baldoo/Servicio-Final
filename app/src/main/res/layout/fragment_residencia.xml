@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".residencia"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Departamento de Residencias"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"/>
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:textSize="16sp"
+                    android:text="Se concibe la residencia profesional como una estrategia educativa, con un carácter curricular, que permite al estudiante, aún estando en proceso de formación, incorporarse profesionalmente a los sectores productivos de bienes y servicios, a través del desarrollo de un proyecto definido de trabajo profesional, asesorado por instancias académicas e instancias externas.\n\nAprender implica participar socialmente e interactuar con objetos de estudio y trabajo, vincular el conocimiento teórico con diversas experiencias prácticas y ser capaz de encontrar nuevas respuestas. La aplicación de conocimientos y el trabajo práctico, deben ocupar un lugar importante en la formación profesional de los futuros egresados del Sistema Nacional de Institutos Tecnológicos."/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/res_logo1"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:textSize="16sp"
+                    android:text="El desarrollo de la residencia profesional puede representar una forma de transitar entre la teoría y la práctica. El ámbito de trabajo, será una posibilidad para aplicar los conocimientos adquiridos y proponer soluciones a los problemas de un campo profesional. Con la residencia profesional, se busca que el estudiante se vea enfrentado a situaciones que, posiblemente, rebasen su nivel de conocimientos, que se vea obligado a desarrollar su capacidad analítica, impulsándolo a investigar por su cuenta, a demandar mayores explicaciones y a volver a interrogar a sus maestros.\n\nEl sentido formativo de la residencia profesional se fortalece al propiciar que el estudiante estudie y resuelva situaciones complejas y reales, en las que se requiere simultáneamente el conocimiento de la ciencia y la tecnología, así como capacidad del intelecto y sensibilidad social."/>
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:textStyle="bold"
+                    android:text="\nLa residencia profesional promueve el logro de los siguientes objetivos:"/>
+
+
+                <ExpandableListView
+                    android:id="@+id/lista_objetivos"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:scrollbars="none">
+                </ExpandableListView>
+
+            <GridLayout
+                android:rowCount="1"
+                android:columnCount="2"
+                android:layout_width="match_parent"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false"
+                android:layout_weight="8"
+                android:layout_height="0dp"
+                android:padding="14dp">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/proyectos_residencias"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    app:cardElevation="8dp"
+                    app:cardCornerRadius="8dp"
+                    android:clickable="true">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Banco de Proyectos de Residencias Profesionales"
+                        android:gravity="center"
+                        android:textSize="17sp"/>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/soliciotud_residencias"
+                    android:layout_width="0dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    app:cardElevation="8dp"
+                    app:cardCornerRadius="8dp"
+                    android:clickable="true">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Llena tu solicitud en línea aquí"
+                        android:gravity="center"
+                        android:textSize="17sp"/>
+
+                </android.support.v7.widget.CardView>
+            </GridLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:gravity="center"
+                android:text="Mayores Informes: residencias@itmexicali.edu.mx"/>
+
+        </LinearLayout>
+</ScrollView>

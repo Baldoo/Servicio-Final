@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".servicio_introduccion1"
+    android:background="@drawable/fondo5"
+    android:id="@+id/pagina_introduccion1">
+
+    <ImageView
+        android:id="@+id/img1"
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:layout_marginTop="110dp"
+        android:src="@drawable/servicio_social_foto"/>
+
+    <TextView
+        android:id="@+id/texto1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:textSize="19sp"
+        android:layout_below="@+id/img1"
+        android:text="¿De qué me sirve el Servicio Social?\n\nEl servicio social es una actividad obligatoria para toda persona que está cursando educación superior y quiere contar con la posibilidad de obtener un título profesional y desempeñar la profesión."
+        android:gravity="center_horizontal"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/texto1"
+        android:layout_marginTop="50dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/selecc"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/pag2"
+        android:layout_marginBottom="5dp"
+        android:layout_toStartOf="@+id/pag2" />
+
+    <ImageView
+        android:id="@+id/pag1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/noselecc"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/pag2"
+        android:layout_marginBottom="5dp"
+        android:layout_toStartOf="@+id/pag2"
+        android:clickable="true"/>
+
+    <ImageView
+        android:id="@+id/pag2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/noselecc"
+        android:layout_marginBottom="5dp"
+        android:clickable="true"/>
+
+    <ImageView
+        android:id="@+id/pag3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/pag2"
+        android:src="@drawable/noselecc"
+        android:layout_marginBottom="5dp"
+        android:layout_toEndOf="@id/pag2"
+        android:clickable="true"/>
+
+</RelativeLayout>

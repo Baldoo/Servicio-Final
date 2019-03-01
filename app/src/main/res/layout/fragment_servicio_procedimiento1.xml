@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".servicio_procedimiento1"
+    android:background="@drawable/fondo3"
+    android:id="@+id/procedimientos">
+
+    <Chronometer
+        android:id="@+id/reloj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animacion"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:layout_above="@+id/text1"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animacion_swipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        app:lottie_fileName="swipe.json"
+        app:lottie_colorFilter="@color/negro"
+        android:visibility="invisible"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentBottom="true"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/tiempo"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:lottie_loop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        app:lottie_fileName="tiempo.json"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"/>
+
+    <ImageView
+        android:id="@+id/edificio"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:src="@drawable/edificio"
+        android:layout_above="@id/text1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp" />
+
+    <ImageView
+        android:id="@+id/solicitud1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_above="@id/text1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/solicitud" />
+
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edificio"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp">
+
+    <ImageView
+        android:id="@+id/atras_proc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+        android:layout_toLeftOf="@+id/num"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/num"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <TextView
+        android:id="@+id/num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textColor="@color/negro"
+        android:layout_centerInParent="true"
+        android:textSize="50sp"/>
+
+    <ImageView
+        android:id="@+id/avanzar_proc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:layout_toRightOf="@+id/num"
+        android:layout_centerVertical="true"
+        android:clickable="true"
+        android:layout_toEndOf="@+id/num"
+        android:focusable="true" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="230dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:textColor="@color/negro"
+        android:textSize="19sp"
+        android:padding="20dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="230dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:textColor="@color/negro"
+        android:textSize="19sp"
+        android:padding="20dp"
+        android:gravity="center"/>
+
+</RelativeLayout>
