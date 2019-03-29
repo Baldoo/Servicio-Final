@@ -36,12 +36,9 @@ int i = 1, inicio=0, actual=1, anterior=0, siguiente=2;
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_servicio_procedimiento1, container, false);
 
-        reloj = v.findViewById(R.id.reloj);
-        reloj.setBase(SystemClock.elapsedRealtime());
 
         final LottieAnimationView animationView = v.findViewById(R.id.animacion);
         final LottieAnimationView animationView2 = v.findViewById(R.id.animacion_swipe);
-        final LottieAnimationView tiempo = v.findViewById(R.id.tiempo);
 
         Typeface custom_font = Typeface.createFromAsset(getContext().getAssets(),  "poppins_regular.otf");
         final TextView texto = v.findViewById(R.id.text1);
@@ -55,7 +52,6 @@ int i = 1, inicio=0, actual=1, anterior=0, siguiente=2;
         final ImageView atras = v.findViewById(R.id.atras_proc);
 
         final ImageView edificio = v.findViewById(R.id.edificio);
-        final ImageView solicitud = v.findViewById(R.id.solicitud1);
 
         fromRight = AnimationUtils.loadAnimation(getContext(), R.anim.from_right);
         fromLeft = AnimationUtils.loadAnimation(getContext(), R.anim.from_left);
@@ -68,47 +64,11 @@ int i = 1, inicio=0, actual=1, anterior=0, siguiente=2;
         {
             atras.setVisibility(View.INVISIBLE);
             texto2.setVisibility(View.INVISIBLE);
-            solicitud.setVisibility(View.INVISIBLE);
             texto.setText("Los alumnos interesados que cumplan con los requisitos anteriores, deberán dirigirse a la oficina de Servicio Social.");
             edificio.setAnimation(fromRight);
             texto.setAnimation(fromBot);
-            tiempo.setSpeed(3);
-            tiempo.playAnimation();
         }
 
-        reloj.start();
-        reloj.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
-            @Override
-            public void onChronometerTick(Chronometer chronometer) {
-                if(reloj.getText().toString().equals("00:05")||reloj.getText().toString().equals("00:10")
-                        ||reloj.getText().toString().equals("00:15")||reloj.getText().toString().equals("00:20")
-                        ||reloj.getText().toString().equals("00:25")||reloj.getText().toString().equals("00:30")
-                        ||reloj.getText().toString().equals("00:35")||reloj.getText().toString().equals("00:40")
-                        ||reloj.getText().toString().equals("00:45")) {
-                    if(i==8)
-                        getActivity().finish();
-                    else {
-                        anterior = i;
-                        i++;
-                        actual++;
-                        siguiente++;
-                        Cambio(i, num, atras, solicitud, texto, texto2, edificio, animationView, tiempo);
-                    }
-                }
-
-                if(reloj.getText().toString().equals("00:00") && inicio==0)
-                {
-                    inicio = 1;
-                    animationView2.setVisibility(View.VISIBLE);
-                    animationView2.playAnimation();
-                }
-
-                if(reloj.getText().toString().equals("00:04"))
-                {
-                    animationView2.setAnimation(fadeOut);
-                }
-            }
-        });
 
 
         avanzar.setOnClickListener(new View.OnClickListener() {
@@ -121,8 +81,7 @@ int i = 1, inicio=0, actual=1, anterior=0, siguiente=2;
                     i++;
                     actual++;
                     siguiente++;
-                    Cambio(i, num, atras, solicitud, texto, texto2, edificio, animationView, tiempo);
-                    reloj.setBase(SystemClock.elapsedRealtime());
+                    Cambio(i, num, atras, texto, texto2, edificio, animationView);
                 }
             }
         });
@@ -137,8 +96,7 @@ int i = 1, inicio=0, actual=1, anterior=0, siguiente=2;
                     i--;
                     actual--;
                     siguiente--;
-                    Cambio(i,num, atras, solicitud, texto, texto2, edificio, animationView, tiempo);
-                    reloj.setBase(SystemClock.elapsedRealtime());
+                    Cambio(i,num, atras,  texto, texto2, edificio, animationView);
                 }
             }
         });
@@ -151,7 +109,6 @@ int i = 1, inicio=0, actual=1, anterior=0, siguiente=2;
             public void onSwipeLeft() {
                 super.onSwipeLeft();
                 if(i==8) {
-                    solicitud.setVisibility(View.INVISIBLE);
                     edificio.setVisibility(View.INVISIBLE);
                     texto.setVisibility(View.INVISIBLE);
                     texto2.setVisibility(View.INVISIBLE);
@@ -162,8 +119,7 @@ int i = 1, inicio=0, actual=1, anterior=0, siguiente=2;
                     i++;
                     actual++;
                     siguiente++;
-                    Cambio(i, num, atras, solicitud, texto, texto2, edificio, animationView, tiempo);
-                    reloj.setBase(SystemClock.elapsedRealtime());
+                    Cambio(i, num, atras,  texto, texto2, edificio, animationView);
                 }
             }
 
@@ -171,7 +127,6 @@ int i = 1, inicio=0, actual=1, anterior=0, siguiente=2;
             public void onSwipeRight() {
                 super.onSwipeRight();
                 if(i==1) {
-                    solicitud.setVisibility(View.INVISIBLE);
                     edificio.setVisibility(View.INVISIBLE);
                     texto.setVisibility(View.INVISIBLE);
                     texto2.setVisibility(View.INVISIBLE);
@@ -182,8 +137,7 @@ int i = 1, inicio=0, actual=1, anterior=0, siguiente=2;
                     i--;
                     actual--;
                     siguiente--;
-                    Cambio(i, num, atras, solicitud, texto, texto2, edificio, animationView, tiempo);
-                    reloj.setBase(SystemClock.elapsedRealtime());
+                    Cambio(i, num, atras, texto, texto2, edificio, animationView);
                 }
             }
         });
@@ -192,9 +146,8 @@ int i = 1, inicio=0, actual=1, anterior=0, siguiente=2;
         return v;
     }
 
-    public void Cambio(int i, TextView num, ImageView atras, ImageView solicitud, TextView texto, TextView texto2, ImageView edificio, LottieAnimationView animationView, LottieAnimationView tiempo)
+    public void Cambio(int i, TextView num, ImageView atras, TextView texto, TextView texto2, ImageView edificio, LottieAnimationView animationView)
     {
-        double n = 2.8;
         fromRight = AnimationUtils.loadAnimation(getContext(), R.anim.from_right);
         fromLeft = AnimationUtils.loadAnimation(getContext(), R.anim.from_left);
         toRight = AnimationUtils.loadAnimation(getContext(), R.anim.to_right);
@@ -212,7 +165,6 @@ int i = 1, inicio=0, actual=1, anterior=0, siguiente=2;
                 num.setText("1");
                 num.setAnimation(fadeIn);
                 atras.setVisibility(View.INVISIBLE);
-                solicitud.setVisibility(View.INVISIBLE);
                 texto.setText("Los alumnos interesados que cumplan con los requisitos anteriores, deberán dirigirse a la oficina de Servicio Social.");
                 texto.setVisibility(View.VISIBLE);
                 texto.setAnimation(fromBot);
@@ -223,9 +175,6 @@ int i = 1, inicio=0, actual=1, anterior=0, siguiente=2;
                 break;
 
             case 2:
-                tiempo.setSpeed((float) n);
-                tiempo.setProgress(0);
-                tiempo.playAnimation();
                 animationView.setAnimation(fadeIn);
                 animationView.setAnimation("pencil_anim.json");
                 animationView.setVisibility(View.VISIBLE);
@@ -243,13 +192,9 @@ int i = 1, inicio=0, actual=1, anterior=0, siguiente=2;
                     edificio.setAnimation(toRight);
                 }
                 edificio.setVisibility(View.INVISIBLE);
-                solicitud.setVisibility(View.INVISIBLE);
                 break;
 
             case 3:
-                tiempo.setSpeed((float) n);
-                tiempo.setProgress(0);
-                tiempo.playAnimation();
                 animationView.setVisibility(View.VISIBLE);
                 animationView.setAnimation(fadeIn);
                 animationView.setAnimation("paper.json");
@@ -266,9 +211,6 @@ int i = 1, inicio=0, actual=1, anterior=0, siguiente=2;
                 break;
 
             case 4:
-                tiempo.setSpeed((float) n);
-                tiempo.setProgress(0);
-                tiempo.playAnimation();
                 animationView.setVisibility(View.VISIBLE);
                 animationView.setAnimation("success.json");
                 animationView.playAnimation();
@@ -284,9 +226,6 @@ int i = 1, inicio=0, actual=1, anterior=0, siguiente=2;
                 break;
 
             case 5:
-                tiempo.setSpeed((float) n);
-                tiempo.setProgress(0);
-                tiempo.playAnimation();
                 animationView.setVisibility(View.VISIBLE);
                 animationView.setAnimation(fadeIn);
                 animationView.setAnimation("checkmark.json");
@@ -302,9 +241,6 @@ int i = 1, inicio=0, actual=1, anterior=0, siguiente=2;
                 break;
 
             case 6:
-                tiempo.setSpeed((float) n);
-                tiempo.setProgress(0);
-                tiempo.playAnimation();
                 animationView.setVisibility(View.VISIBLE);
                 animationView.setAnimation("keyboard.json");
                 animationView.playAnimation();
@@ -319,9 +255,6 @@ int i = 1, inicio=0, actual=1, anterior=0, siguiente=2;
                 break;
 
             case 7:
-                tiempo.setSpeed((float) n);
-                tiempo.setProgress(0);
-                tiempo.playAnimation();
                 animationView.setVisibility(View.VISIBLE);
                 animationView.setAnimation(fadeIn);
                 animationView.setAnimation("recibido.json");
@@ -336,9 +269,6 @@ int i = 1, inicio=0, actual=1, anterior=0, siguiente=2;
                 break;
 
             case 8:
-                tiempo.setSpeed((float) n);
-                tiempo.setProgress(0);
-                tiempo.playAnimation();
                 animationView.setVisibility(View.VISIBLE);
                 animationView.setAnimation("trophy.json");
                 animationView.setAnimation(fadeIn);

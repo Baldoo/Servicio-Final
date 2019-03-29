@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/img2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:src="@drawable/setenta"
         android:layout_marginTop="120dp"
         android:layout_marginBottom="20dp"
@@ -21,12 +21,12 @@
         android:layout_height="wrap_content"
         android:text="Cuándo puedo hacer mi Servicio Social?\n\nPara que inicies el servicio social es necesario que hayas cubierto, como mínimo, el 70 % de los créditos de tu carrera, los que obtienes al concluir en forma regular el sexto semestre."
         android:layout_below="@+id/img2"
-        android:padding="20dp"
-        android:textSize="19sp"
+        android:padding="40dp"
+        android:textSize="27sp"
         android:gravity="center"/>
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
         android:layout_marginTop="25dp"
         android:layout_alignTop="@+id/texto2"
@@ -34,15 +34,15 @@
         android:layout_alignParentRight="true" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
         android:layout_marginTop="25dp"
         android:layout_alignTop="@+id/texto2"/>
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/selecc"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/pag2_3"
@@ -51,8 +51,8 @@
 
     <ImageView
         android:id="@+id/pag2_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/noselecc"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/pag2_2"
@@ -61,8 +61,8 @@
 
     <ImageView
         android:id="@+id/pag2_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:src="@drawable/noselecc"
@@ -70,8 +70,8 @@
 
     <ImageView
         android:id="@+id/pag2_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@id/pag2_2"
         android:src="@drawable/noselecc"

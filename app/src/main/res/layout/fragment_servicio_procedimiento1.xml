@@ -8,12 +8,6 @@
     android:background="@drawable/fondo3"
     android:id="@+id/procedimientos">
 
-    <Chronometer
-        android:id="@+id/reloj"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animacion"
@@ -25,25 +19,14 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animacion_swipe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_centerHorizontal="true"
         app:lottie_fileName="swipe.json"
         app:lottie_colorFilter="@color/negro"
         android:visibility="invisible"
         android:layout_marginBottom="5dp"
         android:layout_alignParentBottom="true"/>
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/tiempo"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:lottie_loop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        app:lottie_fileName="tiempo.json"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="5dp"/>
 
     <ImageView
         android:id="@+id/edificio"
@@ -53,15 +36,6 @@
         android:layout_above="@id/text1"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp" />
-
-    <ImageView
-        android:id="@+id/solicitud1"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_above="@id/text1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/solicitud" />
 
     <RelativeLayout
         android:layout_width="100dp"

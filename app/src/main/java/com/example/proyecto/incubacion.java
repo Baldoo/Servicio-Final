@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -59,14 +60,16 @@ public class incubacion extends Fragment {
 
         reloj.setBase(SystemClock.elapsedRealtime());
         dialogo = new Dialog(getContext());
-
+        final Typeface custom_font = Typeface.createFromAsset(getContext().getApplicationContext().getAssets(),  "poppins_regular.otf");
         CardView boton_mision = v.findViewById(R.id.boton_mision);
         boton_mision.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialogo.setContentView(R.layout.incubacion_items);
-                texto = (TextView) dialogo.findViewById(R.id.texto_incubacion);
-                texto.setTextColor(getResources().getColor(R.color.negro));
+                CardView card = dialogo.findViewById(R.id.carta_incubacion);
+                card.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                texto = dialogo.findViewById(R.id.texto_incubacion);
+                texto.setTypeface(custom_font);
                 texto.setText("\nMisión: \n\nSer un organismo capaz de generar y consolidar ideas, que se puedan convertir en empresas. A través de la promoción, generación y desarrollo de una cultura emprendedora e innovadora dentro de nuestro instituto, nuestra región y nuestro país. Siendo el medio por el cual sé proporcione: orientación profesional, asesoría especializada, seguimiento y consolidación empresarial.");
                 dialogo.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialogo.show();
@@ -79,8 +82,9 @@ public class incubacion extends Fragment {
             public void onClick(View v) {
                 dialogo.setContentView(R.layout.incubacion_items);
                 CardView card = dialogo.findViewById(R.id.carta_incubacion);
-                card.setBackgroundColor(getResources().getColor(R.color.dark_blue));
+                card.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
                 texto = dialogo.findViewById(R.id.texto_incubacion);
+                texto.setTypeface(custom_font);
                 texto.setText("\nVisión: \n\nSer una incubadora de tecnología intermedia capaz de promover, difundir, formalizar y consolidar la actividad empresarial entre nuestros estudiantes, nuestros egresados, nuestra región y nuestro país. Impulsando el crecimiento y desarrollo económico que a su vez mejoren la calidad de vida de  nuestra sociedad.");
                 dialogo.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialogo.show();
@@ -93,8 +97,9 @@ public class incubacion extends Fragment {
             public void onClick(View v) {
                 dialogo.setContentView(R.layout.incubacion_items);
                 CardView card = dialogo.findViewById(R.id.carta_incubacion);
-                card.setBackgroundColor(getResources().getColor(R.color.design_default_color_primary));
+                card.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
                 texto = dialogo.findViewById(R.id.texto_incubacion);
+                texto.setTypeface(custom_font);
                 texto.setText("\nValores:\n\n Ética profesional. Confiere el gran compromiso de actuar dentro del marco de la Ley y de prevenir a los usuarios del servicio de los posibles riesgos que su idea puede generar. Honestidad. Aclarar en todo momento las ventajas y desventajas de los proyectos. Iniciativa. Ir de manera decidida hacia la búsqueda permanente de nuestros objetivos y metas, entendiendo que el manejo adecuado del tiempo en un valor agregado es el emprendedurismo.");
                 dialogo.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialogo.show();
@@ -109,6 +114,7 @@ public class incubacion extends Fragment {
                 CardView card = dialogo.findViewById(R.id.carta_incubacion);
                 card.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
                 texto = dialogo.findViewById(R.id.texto_incubacion);
+                texto.setTypeface(custom_font);
                 texto.setText("\nObjetivo:\n\nEl objetivo de la incubadora dentro de la institución es impulsar la cultura empresarial y fomentar el desarrollo de la innovación tecnológica de productos, procesos y servicios, a través de la aplicación de tecnologías, obteniendo con ello:\n\n- La creación de empresas y empleos.\n- Las oportunidades de desarrollo para nuestros profesionistas.");
                 dialogo.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialogo.show();
@@ -196,12 +202,7 @@ public class incubacion extends Fragment {
         contacto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialogo.setContentView(R.layout.incubacion_items);
-                texto = dialogo.findViewById(R.id.texto_incubacion);
-                texto.setTextColor(getResources().getColor(R.color.negro));
-                texto.setText(" Horario: Lunes a Viernes de 8:00 - 14:00\n Dirección: Av. Tecnológico S/N Col.Elías Calles, Mexicali, B.C., CP 21376\n Edificio L\n Tel: 5804927\n Correo: incubadora@itmexicali.edu.mx");
-                dialogo.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialogo.show();
+                getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.gla_there_come, R.anim.gla_there_gone).replace(R.id.content_main, new Contacto(1)).commit();
             }
         });
         return v;

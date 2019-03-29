@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondos">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/fondo_servicio">
 
 
     <TextView
@@ -15,7 +16,7 @@
         android:clickable="true"
         android:textColor="@color/negro"
         android:textSize="28sp"
-        android:focusable="true" />
+        android:focusable="true"/>
 
     <TextView
         android:id="@+id/docu"

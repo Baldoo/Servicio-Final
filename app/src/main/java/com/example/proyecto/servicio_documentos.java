@@ -1,8 +1,9 @@
 package com.example.proyecto;
 
 
+import android.content.Intent;
 import android.graphics.Typeface;
-import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,8 +12,8 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -36,12 +37,51 @@ public class servicio_documentos extends Fragment {
         Typeface custom_font = Typeface.createFromAsset(getContext().getApplicationContext().getAssets(),  "poppins_regular.otf");
         TextView texto1 = v.findViewById(R.id.t1);
         texto1.setTypeface(custom_font);
+        texto1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CheckInt c = new CheckInt();
+                if(c.internetIsConnected())
+                {
+                    Toast.makeText(getContext(), "Descargando Archivo...",Toast.LENGTH_SHORT).show();
+                    Intent url = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.itmexicali.edu.mx/servicios1/programa.xls"));
+                }
+                else
+                    Toast.makeText(getContext(), "No esta conectado a Internet...",Toast.LENGTH_SHORT).show();
+            }
+        });
 
         TextView texto2 = v.findViewById(R.id.t2);
         texto2.setTypeface(custom_font);
+        texto2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CheckInt c = new CheckInt();
+                if(c.internetIsConnected())
+                {
+                    Toast.makeText(getContext(), "Descargando Archivo...",Toast.LENGTH_SHORT).show();
+                    Intent url = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.itmexicali.edu.mx/servicios1/ssocial2.rar"));
+                }
+                else
+                    Toast.makeText(getContext(), "No esta conectado a Internet...",Toast.LENGTH_SHORT).show();
+            }
+        });
 
         TextView texto3 = v.findViewById(R.id.t3);
         texto3.setTypeface(custom_font);
+        texto3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CheckInt c = new CheckInt();
+                if(c.internetIsConnected())
+                {
+                    Toast.makeText(getContext(), "Descargando Archivo...",Toast.LENGTH_SHORT).show();
+                    Intent url = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.itmexicali.edu.mx/servicios1/instructivo.doc"));
+                }
+                else
+                    Toast.makeText(getContext(), "No esta conectado a Internet...",Toast.LENGTH_SHORT).show();
+            }
+        });
 
         fade1= AnimationUtils.loadAnimation(getContext(), R.anim.fadein);
         texto1.setAnimation(fade1);
@@ -56,7 +96,7 @@ public class servicio_documentos extends Fragment {
             @Override
             public void onSwipeRight() {
                 super.onSwipeRight();
-                getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_right,R.anim.enter_from_right, R.anim.exit_to_right).replace(R.id.content_main, new fragmento_servicio_social()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_right,R.anim.enter_from_right, R.anim.exit_to_right).replace(R.id.content_main, new servicio_social()).commit();
             }
 
         });
@@ -65,7 +105,7 @@ public class servicio_documentos extends Fragment {
         img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_right,R.anim.enter_from_right, R.anim.exit_to_right).replace(R.id.content_main, new fragmento_servicio_social()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_right,R.anim.enter_from_right, R.anim.exit_to_right).replace(R.id.content_main, new servicio_social()).commit();
             }
         });
         return v;
